@@ -19,15 +19,35 @@ class AuthController extends GetxController {
       } else {
         Get.defaultDialog(
           title: "Verificatioon Email",
-          middleText: "Kamu Perlu Verifikasi Email",
+          middleText:
+              "Kamu Perlu Verifikasi Email. apakah kamu ingin dikirimkan verifikasi ulang?",
+          onConfirm: () async {
+            await myUser.user!.sendEmailVerification();
+            Get.back();
+          },
+          textConfirm: "Kirim Ulang",
+          textCancel: "Kembali",
         );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
+        Get.defaultDialog(
+          title: "Verificatioon Email",
+          middleText: "No user found for that email.",
+        );
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided for that user.');
+        Get.defaultDialog(
+          title: "Verificatioon Email",
+          middleText: "Wrong password provided for that user.",
+        );
       }
+    } catch (e) {
+      Get.defaultDialog(
+        title: "Verificatioon Email",
+        middleText: "Tidak dapat login pakai akun ini",
+      );
     }
   }
 
@@ -57,9 +77,17 @@ class AuthController extends GetxController {
         );
       } else if (e.code == 'email-already-in-use') {
         print('The account already exists for that email.');
+        Get.defaultDialog(
+          title: "Verificatioon Email",
+          middleText: 'The account already exists for that email.',
+        );
       }
     } catch (e) {
       print(e);
+      Get.defaultDialog(
+        title: "Verificatioon Email",
+        middleText: 'Tidak dapat mendaftarkan akun ini',
+      );
     }
   }
 
