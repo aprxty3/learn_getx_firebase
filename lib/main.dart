@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 import 'package:learn_getx_firebase/app/controllers/auth_controller.dart';
+import 'package:learn_getx_firebase/app/modules/home/views/home_view.dart';
+import 'package:learn_getx_firebase/app/modules/login/views/login_view.dart';
+import 'package:learn_getx_firebase/app/utils/loading.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -19,12 +22,16 @@ class MyApp extends StatelessWidget {
     return StreamBuilder<User?>(
       stream: authC.streamAuthStatus,
       builder: (context, snapshot) {
-        print(snapshot);
-        return GetMaterialApp(
-          title: "Application",
-          initialRoute: Routes.HOME,
-          getPages: AppPages.routes,
-        );
+        if (snapshot.connectionState == ConnectionState.active) {
+          print(snapshot.data);
+          return GetMaterialApp(
+            title: "Application",
+            initialRoute: snapshot.data != null ? Routes.HOME : Routes.LOGIN,
+            getPages: AppPages.routes,
+            // home: snapshot.data != null ? HomeView() : LoginView(),
+          );
+        }
+        return LoadingView();
       },
     );
   }
