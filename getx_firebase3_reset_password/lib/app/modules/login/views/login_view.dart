@@ -61,6 +61,26 @@ class LoginView extends GetView<LoginController> {
                   ),
                 )
               ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  'Lupa Password?',
+                  style: TextStyle(
+                    fontSize: 14,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.RESET_PASSWORD);
+                  },
+                  child: Text(
+                    'Reset Password',
+                    style: TextStyle(fontSize: 14),
+                  ),
+                )
+              ],
             )
           ],
         ),

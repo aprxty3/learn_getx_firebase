@@ -1,7 +1,7 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class SignupController extends GetxController {
+class ResetPasswordController extends GetxController {
   final emailC = TextEditingController(text: "ajicool26@gmail.com");
   final passwordC = TextEditingController(text: "123123");
 

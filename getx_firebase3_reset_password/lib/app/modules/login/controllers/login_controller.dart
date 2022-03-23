@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 class LoginController extends GetxController {
-  final emailC = TextEditingController(text: "test@gmail.com");
+  final emailC = TextEditingController(text: "ajicool26@gmail.com");
   final passwordC = TextEditingController(text: "123123");
 
   @override
