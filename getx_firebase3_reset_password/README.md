@@ -1,4 +1,4 @@
-Learn About Email Verification :
-- Sending email verification on Mail (Gmail)
-- Re-Sending email verification
-- Edit mail sending template
+Learn About Reset Password :
+- Sending email Reset Password on Mail (Gmail)
+- Re-Sending email Reset Password
+- Build Reset Password page
