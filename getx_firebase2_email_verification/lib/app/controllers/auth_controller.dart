@@ -33,14 +33,28 @@ class AuthController extends GetxController {
 
   void signUp(String email, String password) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      UserCredential myUser =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
-      Get.offAllNamed(Routes.HOME);
+      await myUser.user!.sendEmailVerification();
+      Get.defaultDialog(
+        title: "Verificatioon Email",
+        middleText: "Kami telah mengirim Verifikasi Email ke $email",
+        onConfirm: () {
+          Get.back(); // to close dialog
+          Get.back(); // go to login
+        },
+        textConfirm: "Ya, Saya akan cek Email",
+      );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         print('The password provided is too weak.');
+        Get.defaultDialog(
+          title: "Verificatioon Email",
+          middleText: 'The password provided is too weak.',
+        );
       } else if (e.code == 'email-already-in-use') {
         print('The account already exists for that email.');
       }
