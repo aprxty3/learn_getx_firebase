@@ -1,4 +1,5 @@
-Learn About Reset Password :
-- Sending email Reset Password on Mail (Gmail)
-- Re-Sending email Reset Password
-- Build Reset Password page
+Learn About Cloud Firestore :
+- add Data
+- edit Data
+- delete Data
+- read Data (one time & stream)
