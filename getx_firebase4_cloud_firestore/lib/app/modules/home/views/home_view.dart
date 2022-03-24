@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,12 +25,25 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) => ListTile(
-          title: Text("Nama Produk"),
-          subtitle: Text("Status : Baru"),
-        ),
+      body: FutureBuilder<QuerySnapshot<Object?>>(
+        future: controller.getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            var listAllDocs = snapshot.data!.docs;
+            return ListView.builder(
+              itemCount: listAllDocs.length,
+              itemBuilder: (context, index) => ListTile(
+                title: Text(
+                    "${(listAllDocs[index].data() as Map<String, dynamic>)["nama"]}"),
+                subtitle: Text(
+                    "Rp. ${(listAllDocs[index].data() as Map<String, dynamic>)["harga"]}"),
+              ),
+            );
+          }
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Get.toNamed(Routes.PRODUCT),

@@ -23,6 +23,9 @@ class ProductController extends GetxController {
         title: "Berhasil",
         middleText: "Berhasil menambahkan produk",
         onConfirm: () {
+          nameC.clear();
+          priceC.clear();
+          Get.back();
           Get.back();
         },
         textConfirm: "Ok",
