@@ -63,9 +63,16 @@ class HomeView extends GetView<HomeController> {
                   arguments: listAllDocs[index].id,
                 ),
                 title: Text(
-                    "${(listAllDocs[index].data() as Map<String, dynamic>)["nama"]}"),
+                  "${(listAllDocs[index].data() as Map<String, dynamic>)["nama"]}",
+                ),
                 subtitle: Text(
-                    "Rp. ${(listAllDocs[index].data() as Map<String, dynamic>)["harga"]}"),
+                  "Rp. ${(listAllDocs[index].data() as Map<String, dynamic>)["harga"]}",
+                ),
+                trailing: IconButton(
+                  onPressed: () =>
+                      controller.deleteProduct(listAllDocs[index].id),
+                  icon: Icon(Icons.delete),
+                ),
               ),
             );
           }
