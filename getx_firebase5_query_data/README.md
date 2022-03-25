@@ -1,5 +1,6 @@
-Learn About Cloud Firestore :
-- add Data
-- edit Data
-- delete Data
-- read Data (one time & stream)
+Learn About Query Data :
+- Filtering
+- Limit
+- Ordering
+- Indexing
+- Start & End Cursors
