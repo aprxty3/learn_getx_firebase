@@ -8,6 +8,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/product/bindings/product_binding.dart';
 import '../modules/product/views/product_view.dart';
+import '../modules/query/bindings/query_binding.dart';
+import '../modules/query/views/query_view.dart';
 import '../modules/reset_password/bindings/reset_password_binding.dart';
 import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.EDIT_PAGES,
       page: () => EditPagesView(),
       binding: EditPagesBinding(),
+    ),
+    GetPage(
+      name: _Paths.QUERY,
+      page: () => QueryView(),
+      binding: QueryBinding(),
     ),
   ];
 }
