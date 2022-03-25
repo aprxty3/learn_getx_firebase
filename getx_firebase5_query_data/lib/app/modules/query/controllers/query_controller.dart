@@ -8,7 +8,7 @@ class QueryController extends GetxController {
     final result = await firestore
         .collection("users")
         .orderBy('name')
-        .startAt(['mamad']).get();
+        .endAt(['yanto']).get();
     // .orderBy('name')
     // // .where('age', isGreaterThan: "19")
     // // .limit(2)
