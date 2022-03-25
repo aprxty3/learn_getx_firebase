@@ -7,7 +7,7 @@ class QueryController extends GetxController {
   void filter(int age) async {
     final result = await firestore
         .collection("users")
-        .where('age', isGreaterThanOrEqualTo: age.toString())
+        .where('motor', arrayContains: "jupiter")
         .get();
 
     if (result.docs.length > 0) {
