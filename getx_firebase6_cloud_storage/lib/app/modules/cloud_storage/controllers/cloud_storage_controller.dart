@@ -6,5 +6,7 @@ class CloudStorageController extends GetxController {
 
   void akses() async {
     var myRef = storage.ref("hello.text");
+
+    var myRef2 = storage.ref().child("screen_shot").child('hello.txt');
   }
 }
