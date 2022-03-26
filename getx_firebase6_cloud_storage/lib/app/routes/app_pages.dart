@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/cloud_storage/bindings/cloud_storage_binding.dart';
+import '../modules/cloud_storage/views/cloud_storage_view.dart';
 import '../modules/edit_pages/bindings/edit_pages_binding.dart';
 import '../modules/edit_pages/views/edit_pages_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -57,6 +59,11 @@ class AppPages {
       name: _Paths.QUERY,
       page: () => QueryView(),
       binding: QueryBinding(),
+    ),
+    GetPage(
+      name: _Paths.CLOUD_STORAGE,
+      page: () => CloudStorageView(),
+      binding: CloudStorageBinding(),
     ),
   ];
 }

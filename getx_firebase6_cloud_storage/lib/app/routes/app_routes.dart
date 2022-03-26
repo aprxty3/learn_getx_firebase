@@ -10,6 +10,7 @@ abstract class Routes {
   static const PRODUCT = _Paths.PRODUCT;
   static const EDIT_PAGES = _Paths.EDIT_PAGES;
   static const QUERY = _Paths.QUERY;
+  static const CLOUD_STORAGE = _Paths.CLOUD_STORAGE;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const PRODUCT = '/product';
   static const EDIT_PAGES = '/edit-pages';
   static const QUERY = '/query';
+  static const CLOUD_STORAGE = '/cloud-storage';
 }
