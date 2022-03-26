@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "Application",
-      initialRoute: Routes.QUERY,
+      initialRoute: Routes.CLOUD_STORAGE,
       getPages: AppPages.routes,
       // home: snapshot.data != null ? HomeView() : LoginView(),
     );
