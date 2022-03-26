@@ -7,7 +7,7 @@ class CloudStorageController extends GetxController {
   void akses() async {
     var myRef = storage.ref();
 
-    var myList = await myRef.listAll();
+    var myList = await myRef.list(ListOptions(maxResults: 1));
 
     print("Banyak data : ${myList.items.length}");
 
@@ -17,31 +17,31 @@ class CloudStorageController extends GetxController {
       },
     );
 
-    print('-------------------------');
+    // print('-------------------------');
 
-    print("Banyak folder : ${myList.prefixes.length}");
+    // print("Banyak folder : ${myList.prefixes.length}");
+
+    // // myList.prefixes.forEach(
+    // //   (element) {
+    // //     print(element.name);
+    // //   },
+    // // );
+
+    // print('-------------------------');
 
     // myList.prefixes.forEach(
-    //   (element) {
-    //     print(element.name);
+    //   (element) async {
+    //     var myFolderList = await storage.ref(element.name).listAll();
+
+    //     print(
+    //         "Banyak data pada folder ${element.name}: ${myFolderList.items.length}");
+
+    //     myFolderList.items.forEach(
+    //       (element) {
+    //         print(element.name);
+    //       },
+    //     );
     //   },
     // );
-
-    print('-------------------------');
-
-    myList.prefixes.forEach(
-      (element) async {
-        var myFolderList = await storage.ref(element.name).listAll();
-
-        print(
-            "Banyak data pada folder ${element.name}: ${myFolderList.items.length}");
-
-        myFolderList.items.forEach(
-          (element) {
-            print(element.name);
-          },
-        );
-      },
-    );
   }
 }
