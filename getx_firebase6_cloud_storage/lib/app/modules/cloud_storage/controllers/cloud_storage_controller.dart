@@ -5,8 +5,10 @@ class CloudStorageController extends GetxController {
   FirebaseStorage storage = FirebaseStorage.instance;
 
   void akses() async {
-    var myRef = storage.ref("hello.text");
+    var myRef = storage.ref("/screen_shot/");
 
-    var myRef2 = storage.ref().child("screen_shot").child('hello.txt');
+    var myList = await myRef.listAll();
+
+    print(myList.items.length);
   }
 }
