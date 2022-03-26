@@ -5,10 +5,26 @@ class CloudStorageController extends GetxController {
   FirebaseStorage storage = FirebaseStorage.instance;
 
   void akses() async {
-    var myRef = storage.ref("/screen_shot/");
+    var myRef = storage.ref();
 
     var myList = await myRef.listAll();
 
-    print(myList.items.length);
+    print("Banyak data : ${myList.items.length}");
+
+    myList.items.forEach(
+      (element) {
+        print(element.name);
+      },
+    );
+
+    print('-------------------------');
+
+    print("Banyak folder : ${myList.prefixes.length}");
+
+    myList.prefixes.forEach(
+      (element) {
+        print(element.name);
+      },
+    );
   }
 }
