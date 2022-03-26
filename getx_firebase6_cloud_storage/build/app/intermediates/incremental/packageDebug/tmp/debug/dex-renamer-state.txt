@@ -1,4 +1,4 @@
-#Fri Mar 25 23:51:32 WIB 2022
+#Sun Mar 27 00:13:03 WIB 2022
 base.2=/Users/dwiajiprasetyo/personal_project/learn_getx_firebase/getx_firebase6_cloud_storage/build/app/intermediates/dex/debug/mergeDexDebug/classes3.dex
 path.2=classes3.dex
 base.1=/Users/dwiajiprasetyo/personal_project/learn_getx_firebase/getx_firebase6_cloud_storage/build/app/intermediates/dex/debug/mergeDexDebug/classes2.dex
