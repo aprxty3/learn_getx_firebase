@@ -21,9 +21,26 @@ class CloudStorageController extends GetxController {
 
     print("Banyak folder : ${myList.prefixes.length}");
 
+    // myList.prefixes.forEach(
+    //   (element) {
+    //     print(element.name);
+    //   },
+    // );
+
+    print('-------------------------');
+
     myList.prefixes.forEach(
-      (element) {
-        print(element.name);
+      (element) async {
+        var myFolderList = await storage.ref(element.name).listAll();
+
+        print(
+            "Banyak data pada folder ${element.name}: ${myFolderList.items.length}");
+
+        myFolderList.items.forEach(
+          (element) {
+            print(element.name);
+          },
+        );
       },
     );
   }
