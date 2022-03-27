@@ -1,23 +1,28 @@
 import 'package:get/get.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_storage/firebase_storage.dart' as s;
 
 class CloudStorageController extends GetxController {
-  FirebaseStorage storage = FirebaseStorage.instance;
+  s.FirebaseStorage storage = s.FirebaseStorage.instance;
 
   void akses() async {
-    var myRef = storage.ref();
+    String dataUrl = 'data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==';
 
-    var myList = await myRef.listAll();
+    var myRef = storage.ref("helloww.txt");
 
-    print("Banyak data : ${myList.items.length}");
+    myRef.putString(dataUrl, format: s.PutStringFormat.dataUrl);
 
-    myList.items.forEach(
-      (element) async {
-        final url = await storage.ref(element.name).getDownloadURL();
+//UNTUK BACA FILE STORAGE
+    // var myList = await myRef.listAll();
 
-        print(url);
-      },
-    );
+    // print("Banyak data : ${myList.items.length}");
+
+    // myList.items.forEach(
+    //   (element) async {
+    //     final url = await storage.ref(element.name).getDownloadURL();
+
+    //     print(url);
+    //   },
+    // );
 
     // print('-------------------------');
 
