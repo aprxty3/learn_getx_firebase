@@ -11,21 +11,24 @@ class CloudStorageController extends GetxController {
     //UNTUK UPLOAD FILE BENTUK RAW
     String text = 'Hello World!';
     List<int> encoded = utf8.encode(text);
-    Uint8List data = Uint8List.fromList(encoded);
 
-    s.Reference ref =
-        s.FirebaseStorage.instance.ref('uploads/hello-world.text');
+    print(encoded);
 
-    // try {
-    //   // Upload raw data.
-    //   await ref.putData(data);
-    //   // Get raw data.
-    //   Uint8List downloadedData = await ref.getData();
-    //   // prints -> Hello World!
-    //   print(utf8.decode(downloadedData));
-    // } on s.FirebaseException catch (e) {
-    //   // e.g, e.code == 'canceled'
-    // }
+    // Uint8List data = Uint8List.fromList(encoded);
+
+    // s.Reference ref =
+    //     s.FirebaseStorage.instance.ref('uploads/hello-world.text');
+
+    // // try {
+    // //   // Upload raw data.
+    // //   await ref.putData(data);
+    // //   // Get raw data.
+    // //   Uint8List downloadedData = await ref.getData();
+    // //   // prints -> Hello World!
+    // //   print(utf8.decode(downloadedData));
+    // // } on s.FirebaseException catch (e) {
+    // //   // e.g, e.code == 'canceled'
+    // // }
 
     //UNTUK UPLOAD FILE BENTUK STRING
     // String dataUrl = 'data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==';
