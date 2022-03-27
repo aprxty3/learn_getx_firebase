@@ -1,41 +1,50 @@
 import 'package:get/get.dart';
-import 'package:firebase_storage/firebase_storage.dart' as s;
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 
 import 'dart:convert' show utf8;
 import 'dart:typed_data' show Uint8List;
 
 class CloudStorageController extends GetxController {
-  s.FirebaseStorage storage = s.FirebaseStorage.instance;
+  firebase_storage.FirebaseStorage storage =
+      firebase_storage.FirebaseStorage.instance;
 
   void akses() async {
-    //UNTUK UPLOAD FILE BENTUK RAW
-    String text = 'Hello World!';
-    List<int> encoded = utf8.encode(text);
+    // //UNTUK UPLOAD FILE BENTUK RAW
+    // String text = 'Hello World!';
+    // List<int> encoded = utf8.encode(text);
 
-    print(encoded);
+    // print(encoded);
 
-    // Uint8List data = Uint8List.fromList(encoded);
+    // // Uint8List data = Uint8List.fromList(encoded);
 
-    // s.Reference ref =
-    //     s.FirebaseStorage.instance.ref('uploads/hello-world.text');
+    // // s.Reference ref =
+    // //     s.FirebaseStorage.instance.ref('uploads/hello-world.text');
 
-    // // try {
-    // //   // Upload raw data.
-    // //   await ref.putData(data);
-    // //   // Get raw data.
-    // //   Uint8List downloadedData = await ref.getData();
-    // //   // prints -> Hello World!
-    // //   print(utf8.decode(downloadedData));
-    // // } on s.FirebaseException catch (e) {
-    // //   // e.g, e.code == 'canceled'
-    // // }
+    // // // try {
+    // // //   // Upload raw data.
+    // // //   await ref.putData(data);
+    // // //   // Get raw data.
+    // // //   Uint8List downloadedData = await ref.getData();
+    // // //   // prints -> Hello World!
+    // // //   print(utf8.decode(downloadedData));
+    // // // } on s.FirebaseException catch (e) {
+    // // //   // e.g, e.code == 'canceled'
+    // // // }
 
-    //UNTUK UPLOAD FILE BENTUK STRING
+    // UNTUK UPLOAD FILE BENTUK STRING
     // String dataUrl = 'data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==';
 
-    // var myRef = storage.ref("helloww.txt");
+    var myRef = storage.ref("dataWithMetaData.txt");
 
-    // myRef.putString(dataUrl, format: s.PutStringFormat.dataUrl);
+    // Create your custom metadata.
+    firebase_storage.SettableMetadata metadata =
+        firebase_storage.SettableMetadata(
+      cacheControl: 'max-age=60',
+      customMetadata: <String, String>{
+        'userId': 'ABC123',
+      },
+    );
+    myRef.putString("Hellow Worlds");
 
 //UNTUK BACA FILE STORAGE
     // var myList = await myRef.listAll();
