@@ -19,7 +19,7 @@ class CloudStorageView extends GetView<CloudStorageController> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => controller.akses(),
+        onPressed: () => controller.uploadFile(),
       ),
     );
   }
