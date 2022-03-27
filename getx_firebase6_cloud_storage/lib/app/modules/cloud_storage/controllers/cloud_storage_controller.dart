@@ -1,15 +1,38 @@
 import 'package:get/get.dart';
 import 'package:firebase_storage/firebase_storage.dart' as s;
 
+import 'dart:convert' show utf8;
+import 'dart:typed_data' show Uint8List;
+
 class CloudStorageController extends GetxController {
   s.FirebaseStorage storage = s.FirebaseStorage.instance;
 
   void akses() async {
-    String dataUrl = 'data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==';
+    //UNTUK UPLOAD FILE BENTUK RAW
+    String text = 'Hello World!';
+    List<int> encoded = utf8.encode(text);
+    Uint8List data = Uint8List.fromList(encoded);
 
-    var myRef = storage.ref("helloww.txt");
+    s.Reference ref =
+        s.FirebaseStorage.instance.ref('uploads/hello-world.text');
 
-    myRef.putString(dataUrl, format: s.PutStringFormat.dataUrl);
+    // try {
+    //   // Upload raw data.
+    //   await ref.putData(data);
+    //   // Get raw data.
+    //   Uint8List downloadedData = await ref.getData();
+    //   // prints -> Hello World!
+    //   print(utf8.decode(downloadedData));
+    // } on s.FirebaseException catch (e) {
+    //   // e.g, e.code == 'canceled'
+    // }
+
+    //UNTUK UPLOAD FILE BENTUK STRING
+    // String dataUrl = 'data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==';
+
+    // var myRef = storage.ref("helloww.txt");
+
+    // myRef.putString(dataUrl, format: s.PutStringFormat.dataUrl);
 
 //UNTUK BACA FILE STORAGE
     // var myList = await myRef.listAll();
