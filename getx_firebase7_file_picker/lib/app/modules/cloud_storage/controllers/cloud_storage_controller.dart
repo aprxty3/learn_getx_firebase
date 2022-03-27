@@ -6,23 +6,24 @@ import 'package:file_picker/file_picker.dart';
 
 class CloudStorageController extends GetxController {
   void uploadFile() async {
-    FilePickerResult? result = await FilePicker.platform.pickFiles();
+    FilePickerResult? result =
+        await FilePicker.platform.pickFiles(allowMultiple: true);
 
     if (result != null) {
-      File file = File(result.files.single.path!);
-      print(file);
+      result.files.forEach((element) async {
+        String name = element.name;
 
-      String fileName = result.files.first.name;
-      // String fileExtension = result.files.first.extension!;
+        File file = File(element.path!);
 
-      try {
-        await firebase_storage.FirebaseStorage.instance
-            .ref('${fileName}')
-            .putFile(file);
-        print("Berhasil upload file");
-      } on firebase_storage.FirebaseException catch (e) {
-        print(e);
-      }
+        try {
+          await firebase_storage.FirebaseStorage.instance
+              .ref(name)
+              .putFile(file);
+          print("Berhasil Upload Multiple File");
+        } on firebase_storage.FirebaseException catch (e) {
+          print("Error Upload");
+        }
+      });
     } else {
       print("Membatalkan File Upload");
     }
