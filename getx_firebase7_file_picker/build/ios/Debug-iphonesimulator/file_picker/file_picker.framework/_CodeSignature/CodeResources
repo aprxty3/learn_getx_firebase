@@ -26,7 +26,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NgfXm8R8hssEOOLPikDetON5beI=
+		2QEDte0oIYHJfz1WAiz3BF9OFag=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -37,10 +37,6 @@
 	<dict>
 		<key>Headers/FileInfo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Sq68fOlqt2EnxavbxXltBur/XPc=
-			</data>
 			<key>hash2</key>
 			<data>
 			VB3TsWr4fWzdlU23ufNj4/+AZDfGbxFpRBm7v6efCaI=
@@ -48,10 +44,6 @@
 		</dict>
 		<key>Headers/FilePickerPlugin.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			WKAKUHZkUE127PRGT4yzwdhCunw=
-			</data>
 			<key>hash2</key>
 			<data>
 			MG50YQU8QjZAtcirOVuy/9r7XRTEPby6PrFUgxQL35g=
@@ -59,10 +51,6 @@
 		</dict>
 		<key>Headers/FileUtils.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			sDZi/e7YObjZBLESOZdmVKJ1lOg=
-			</data>
 			<key>hash2</key>
 			<data>
 			Y+sFnCCgCKV5QX+AyruigNU3cdDO6A1OzRbvUrTEHMQ=
@@ -70,10 +58,6 @@
 		</dict>
 		<key>Headers/ImageUtils.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			mmdcP2Zbkloin3H3nTQaAHGyYl4=
-			</data>
 			<key>hash2</key>
 			<data>
 			YohzBpU6yFB7I/M4IEAMaa4WQPpgfy1JuFzPvqblKis=
@@ -81,10 +65,6 @@
 		</dict>
 		<key>Headers/file_picker-umbrella.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			oOvDrXzCWoANTBcdo93rLdj44i8=
-			</data>
 			<key>hash2</key>
 			<data>
 			6dxbIpeRf7MZ37tXaOKF/E3kzlawupDJu/4vFme+9wA=
@@ -92,10 +72,6 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			wL3LRgFgUoE4dQ7d+tAgsxG8PRY=
-			</data>
 			<key>hash2</key>
 			<data>
 			NN7URogrInyz3nmt8l+00AZ98o7MMdRwvzbeCelAoWM=
