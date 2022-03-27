@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>282548343816-cr6bot9sjaiadughkd3behrjp6jkbvbi.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.282548343816-cr6bot9sjaiadughkd3behrjp6jkbvbi</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>282548343816-qjvb76f5p72b9vvcarlfl3h9uutvkj67.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDv62hxfFwhDcQ6uAGIoR2FfIpz_hKc838</string>
+	<key>GCM_SENDER_ID</key>
+	<string>282548343816</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.getxfirebase8cloudmessaging.getxFirebase8CloudMessaging</string>
+	<key>PROJECT_ID</key>
+	<string>cloud-messaging-4ab5f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cloud-messaging-4ab5f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:282548343816:ios:331630e830816c094f2dbd</string>
+</dict>
+</plist>
