@@ -7,13 +7,15 @@ class CloudStorageController extends GetxController {
   void akses() async {
     var myRef = storage.ref();
 
-    var myList = await myRef.list(ListOptions(maxResults: 1));
+    var myList = await myRef.listAll();
 
     print("Banyak data : ${myList.items.length}");
 
     myList.items.forEach(
-      (element) {
-        print(element.name);
+      (element) async {
+        final url = await storage.ref(element.name).getDownloadURL();
+
+        print(url);
       },
     );
 
